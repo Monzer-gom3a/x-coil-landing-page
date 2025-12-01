@@ -33,19 +33,7 @@
 }
 
 
-.icon {
-    width: 150px;
-    height: 80px;
-    background-color: #E31A1C;
-    -webkit-mask-image: url("images/logo_white.png");
-    mask-image: url("images/logo_white.png");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-position: center;
-    mask-position: center;
-}
+    
 
 /* Reset & Base */
 *,
@@ -110,6 +98,8 @@ ul {
     cursor: pointer;
     border: none;
     gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
@@ -144,6 +134,10 @@ ul {
 /* Sections */
 .section-padding {
     padding: var(--spacing-xl) 0;
+}
+
+section {
+    scroll-margin-top: 80px;
 }
 
 /* Header */
@@ -222,6 +216,14 @@ ul {
     transition: transform var(--transition-normal);
 }
 
+[dir="rtl"] .app-mockup {
+    transform: perspective(1000px) rotateY(5deg);
+}
+
+.hero:hover .app-mockup {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
 /* Features */
 .section-header {
     text-align: center;
@@ -261,9 +263,24 @@ ul {
 }
 
 .feature-icon {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-sm);
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-sm);
     color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--primary);
+    transition: transform var(--transition-fast);
+}
+
+.feature-card:hover .feature-icon svg {
+    transform: scale(1.1);
 }
 
 .feature-card h3 {
@@ -474,4 +491,304 @@ ul {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+/* Animations & Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(227, 26, 28, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px rgba(227, 26, 28, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(227, 26, 28, 0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(-5px);
+    }
+}
+
+/* Hero Animations */
+.hero-content {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.hero-visual {
+    animation: slideInRight 0.8s ease forwards 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.app-mockup {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Feature Cards Stagger Animation */
+.feature-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.feature-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-card:nth-child(1).animated {
+    transition-delay: 0.1s;
+}
+
+.feature-card:nth-child(2).animated {
+    transition-delay: 0.2s;
+}
+
+.feature-card:nth-child(3).animated {
+    transition-delay: 0.3s;
+}
+
+.feature-card:nth-child(4).animated {
+    transition-delay: 0.4s;
+}
+
+.feature-card:nth-child(5).animated {
+    transition-delay: 0.5s;
+}
+
+/* Steps Animation */
+.step-item {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+}
+
+.step-item.animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.step-item:nth-child(1).animated {
+    transition-delay: 0.1s;
+}
+
+.step-item:nth-child(3).animated {
+    transition-delay: 0.2s;
+}
+
+.step-item:nth-child(5).animated {
+    transition-delay: 0.3s;
+}
+
+.step-arrow {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.step-arrow.animated {
+    opacity: 1;
+}
+
+/* Testimonial Animation */
+.testimonial-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.testimonial-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial-card:nth-child(1).animated {
+    transition-delay: 0.1s;
+}
+
+.testimonial-card:nth-child(2).animated {
+    transition-delay: 0.2s;
+}
+
+/* Section Header Animation */
+.section-header {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.section-header.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Demo Box & Download Animation */
+.demo-box {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s ease;
+}
+
+.demo-box.animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.download-box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+}
+
+.download-box.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Effects */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    animation: bounce 1.5s infinite;
+}
+
+.scroll-indicator.visible {
+    opacity: 0.7;
+}
+
+[dir="rtl"] .scroll-indicator {
+    right: auto;
+    left: 20px;
+}
+
+/* Misc Animations */
+[data-i18n] {
+    transition: opacity 0.2s ease;
+}
+
+.hero-visual img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-visual img.loaded {
+    opacity: 1;
 }

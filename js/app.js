@@ -46,7 +46,7 @@ const translations = {
         feat_save_title: "حفظ بيانات الموتور",
         feat_save_desc: "احتفظ بسجلات منظمة لجميع صيانة ومواصفات الموتور.",
         feat_share_title: "مشاركة آمنة",
-        feat_share_desc: "شارك البيانات مع الزملاء أو الورش فوراً وبأمان.",
+        feat_share_desc: "شارك ال بيانات مع الزملاء أو الورش فوراً وبأمان.",
         feat_community_title: "المجتمع",
         feat_community_desc: "انضم لشبكة من الفنيين لطرح الأسئلة ومشاركة النصائح.",
         feat_bearings_title: "قاعدة بيانات المحامل",
@@ -141,17 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Simple QR Code Placeholder Generator
     const qrContainer = document.getElementById('qr-code-container');
     if (qrContainer) {
-        // Create a canvas to draw a "fake" QR code pattern
         const canvas = document.createElement('canvas');
         canvas.width = 100;
         canvas.height = 100;
         const ctx = canvas.getContext('2d');
 
-        // White background
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, 100, 100);
 
-        // Random black squares
         ctx.fillStyle = '#000000';
         for (let i = 0; i < 100; i++) {
             const x = Math.floor(Math.random() * 10) * 10;
@@ -159,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillRect(x, y, 10, 10);
         }
 
-        // Corner markers
         ctx.fillRect(0, 0, 30, 30);
         ctx.fillRect(70, 0, 30, 30);
         ctx.fillRect(0, 70, 30, 30);
@@ -180,4 +176,112 @@ document.addEventListener('DOMContentLoaded', () => {
 
         qrContainer.appendChild(canvas);
     }
+
+    // Scroll Animation with Intersection Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.feature-card, .step-item, .step-arrow, .testimonial-card, .section-header, .demo-box, .download-box');
+
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // Image lazy loading animation
+    const images = document.querySelectorAll('.hero-visual img');
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+
+    // Custom Smooth Scroll with Easing
+    function smoothScrollTo(targetPosition, duration = 1200) {
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function easeInOutCubic(t) {
+            return t < 0.5
+                ? 4 * t * t * t
+                : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            const ease = easeInOutCubic(progress);
+
+            window.scrollTo(0, startPosition + distance * ease);
+
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            }
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    // Enhanced Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                // Button press animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+
+                // Calculate target position
+                const headerOffset = 80;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+                // Smooth scroll
+                smoothScrollTo(targetPosition, 1200);
+
+                // Pulse animation on target
+                setTimeout(() => {
+                    target.style.animation = 'pulse 0.6s ease';
+                    setTimeout(() => {
+                        target.style.animation = '';
+                    }, 600);
+                }, 800);
+            }
+        });
+    });
+
+    // Scroll indicator
+    let scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+    scrollIndicator.innerHTML = '↓';
+    document.body.appendChild(scrollIndicator);
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        scrollIndicator.classList.add('visible');
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            scrollIndicator.classList.remove('visible');
+        }, 1000);
+    });
 });
