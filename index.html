@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bearings.css">
 </head>
 
 <body>
@@ -193,20 +194,67 @@
             </div>
         </section>
 
-        <!-- Tools Demo Section -->
-        <section class="tools-demo section-padding bg-surface">
+        <!-- Bearings Database Section -->
+        <section id="bearings" class="bearings-search section-padding bg-surface">
             <div class="container">
-                <div class="demo-box">
-                    <div class="demo-content">
-                        <h2 data-i18n="demo_title">Try the Bearing Search</h2>
-                        <p data-i18n="demo_desc">See how easy it is to find bearing data.</p>
-                        <div class="bearing-search-widget">
-                            <input type="text" id="bearing-input" placeholder="Enter bearing number (e.g., 6205)"
-                                class="form-input">
-                            <button id="bearing-search-btn" class="btn btn-primary">Search</button>
+                <div class="section-header">
+                    <h2 data-i18n="bearings_title">Bearings Database</h2>
+                    <p data-i18n="bearings_subtitle">Search through thousands of bearings by number or dimensions</p>
+                </div>
+
+                <div class="bearings-search-box">
+                    <!-- Search Filters -->
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <label for="bearing-number" data-i18n="filter_bearing_number">Bearing Number</label>
+                            <input type="text" id="bearing-number" class="form-input" placeholder="6205"
+                                data-i18n-placeholder="placeholder_bearing_number">
                         </div>
-                        <div id="bearing-result" class="bearing-result"></div>
+
+                        <div class="filter-group">
+                            <label for="inner-diameter" data-i18n="filter_inner_diameter">Inner Diameter (mm)</label>
+                            <input type="number" id="inner-diameter" class="form-input" placeholder="25"
+                                data-i18n-placeholder="placeholder_inner">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="outer-diameter" data-i18n="filter_outer_diameter">Outer Diameter (mm)</label>
+                            <input type="number" id="outer-diameter" class="form-input" placeholder="52"
+                                data-i18n-placeholder="placeholder_outer">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="bearing-type" data-i18n="filter_type">Type</label>
+                            <select id="bearing-type" class="form-input">
+                                <option value="" data-i18n="filter_all_types">All Types</option>
+                                <option value="DeepGroove">Deep Groove</option>
+                                <option value="Angular">Angular Contact</option>
+                                <option value="Thrust">Thrust</option>
+                            </select>
+                        </div>
                     </div>
+
+                    <div class="search-actions">
+                        <button id="search-bearings-btn" class="btn btn-primary">
+                            <span data-i18n="btn_search">Search</span>
+                        </button>
+                        <button id="reset-search-btn" class="btn btn-secondary">
+                            <span data-i18n="btn_reset">Reset</span>
+                        </button>
+                    </div>
+
+                    <!-- Results Summary -->
+                    <div id="results-summary" class="results-summary"></div>
+
+                    <!-- Results Table -->
+                    <div id="bearings-results" class="bearings-results">
+                        <div class="results-placeholder" data-i18n="results_placeholder">
+                            Enter search criteria above to find bearings
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div id="pagination" class="pagination"></div>
                 </div>
             </div>
         </section>
