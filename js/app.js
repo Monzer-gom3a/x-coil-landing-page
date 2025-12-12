@@ -114,12 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const html = document.documentElement;
 
     // Check saved language or default to EN
-    const savedLang = localStorage.getItem('xcoil_lang') || 'en';
+    const savedLang = localStorage.getItem('xcoil_lang') || 'ar';
     setLanguage(savedLang);
 
     langToggle.addEventListener('click', () => {
         const currentLang = html.getAttribute('lang');
-        const newLang = currentLang === 'en' ? 'ar' : 'en';
+        const newLang = currentLang === 'ar' ? 'en' : 'ar';
         setLanguage(newLang);
     });
 
