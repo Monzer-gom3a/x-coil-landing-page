@@ -104,7 +104,7 @@ const translations = {
         no_results: "لم يتم العثور على بلية مطابقة لمعاييرك",
         loading: "جارٍ تحميل بيانات رولمان البلي...",
         download_title: "احصل على إكس-كويل اليوم",
-        download_btn: "تحميل ملف APK للأندرويد",
+        download_btn: "تحميل ملف APK للأندرويد من Google Drive",
         footer_copyright: "© إكس-كويل. كل الحقوق محفوظة."
     }
 };
