@@ -52,7 +52,7 @@ const translations = {
         no_results: "No bearings found matching your criteria",
         loading: "Loading bearings data...",
         download_title: "Get X-Coil Today",
-        download_btn: "Download Android APK",
+        download_btn: "Download Android APK from Google Drive",
         footer_copyright: "© X-Coil. All rights reserved."
     },
     ar: {
