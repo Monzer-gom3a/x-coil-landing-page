@@ -443,6 +443,30 @@ section {
     font-weight: 400;
 }
 
+/* Download Section Wrapper */
+.download-buttons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.download-buttons-wrapper .btn {
+    min-width: 250px;
+    justify-content: center;
+}
+
+.icon-drive {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%234285F4' d='M16.5 6L3 30l8.5 14L25 20z'/%3E%3Cpath fill='%2334A853' d='M31.5 6H16.5L25 20h15z'/%3E%3Cpath fill='%23FBBC04' d='M40 20H25l-8.5 14H31.5z'/%3E%3C/svg%3E");
+    flex-shrink: 0;
+}
+
 /* Footer */
 .site-footer {
     padding: var(--spacing-md) 0;

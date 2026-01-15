@@ -55,6 +55,8 @@ const translations = {
         loading: "Loading bearings data...",
         download_title: "Get X-Coil Today",
         download_btn: "Download Android APK from Telegram",
+        download_telegram: "Download via Telegram",
+        download_drive: "Download from Drive",
         footer_copyright: "© X-Coil. All rights reserved."
     },
     ar: {
@@ -109,6 +111,8 @@ const translations = {
         loading: "جارٍ تحميل بيانات رولمان البلي...",
         download_title: "احصل على إكس-كويل اليوم",
         download_btn: "تحميل ملف APK للأندرويد من Telegram",
+        download_telegram: "التحميل عبر تيليجرام",
+        download_drive: "التحميل عبر جوجل درايف",
         footer_copyright: "© إكس-كويل. كل الحقوق محفوظة."
     }
 };
