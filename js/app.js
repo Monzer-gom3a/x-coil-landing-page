@@ -21,6 +21,8 @@ const translations = {
         feat_bearings_desc: "Search by dimensions or number to find the right bearing.",
         feat_tools_title: "Tools & Calculators",
         feat_tools_desc: "Access handy calculators and converters for your daily work.",
+        feat_marketplace_title: "Marketplace",
+        feat_marketplace_desc: "Buy and sell motors and spare parts.",
         how_title: "How it Works",
         step_1_title: "Save",
         step_1_desc: "Record motor data easily on your phone.",
@@ -52,7 +54,7 @@ const translations = {
         no_results: "No bearings found matching your criteria",
         loading: "Loading bearings data...",
         download_title: "Get X-Coil Today",
-        download_btn: "Download Android APK from Google Drive",
+        download_btn: "Download Android APK from Telegram",
         footer_copyright: "© X-Coil. All rights reserved."
     },
     ar: {
@@ -73,6 +75,8 @@ const translations = {
         feat_bearings_desc: "ابحث بالأبعاد أو الرقم للعثور على رولمان البلي المناسب.",
         feat_tools_title: "أدوات وحاسبات",
         feat_tools_desc: "استخدم حاسبات ومحولات مفيدة لعملك اليومي.",
+        feat_marketplace_title: "المتجر",
+        feat_marketplace_desc: "و بيع وشراء المواتير وقطع الغيار و الموردين.",
         how_title: "كيف يعمل",
         step_1_title: "حفظ",
         step_1_desc: "سجل بيانات الموتور بسهولة على هاتفك.",
@@ -104,7 +108,7 @@ const translations = {
         no_results: "لم يتم العثور على بلية مطابقة لمعاييرك",
         loading: "جارٍ تحميل بيانات رولمان البلي...",
         download_title: "احصل على إكس-كويل اليوم",
-        download_btn: "تحميل ملف APK للأندرويد من Google Drive",
+        download_btn: "تحميل ملف APK للأندرويد من Telegram",
         footer_copyright: "© إكس-كويل. كل الحقوق محفوظة."
     }
 };

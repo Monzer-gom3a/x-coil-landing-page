@@ -394,6 +394,25 @@ section {
     background-repeat: no-repeat;
 }
 
+
+.btn-telegram {
+    background-color: #0088cc;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn-telegram:hover {
+    opacity: 0.9;
+    background-color: #0088cc;
+}
+
 .icon-drive {
     width: 24px;
     height: 24px;

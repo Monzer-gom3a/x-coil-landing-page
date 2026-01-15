@@ -33,16 +33,23 @@
             </a>
 
             <nav class="main-nav">
-                <!-- Nav links will be injected here if needed, or just kept simple -->
             </nav>
 
             <div class="header-actions">
                 <button id="lang-toggle" class="btn-ghost" aria-label="Switch Language">
                     <span class="lang-text">العربية</span>
-                </button>
-                <a href="#download" class="btn btn-primary btn-sm">
-                    <span data-i18n="header_cta">Download for Android</span>
+                </button> <a href="https://t.me/X_coil_App" target="_blank" class="btn-telegram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M11.944 0C5.346 0 0 5.346 0 11.944c0 6.598 5.346 11.944 11.944 11.944 6.598 0 11.944-5.346 11.944-11.944C23.888 5.346 18.542 0 11.944 0zm5.206 16.561c-.19.66-.705.818-1.25.555l-3.328-1.554-1.607 1.548c-.18.18-.33.33-.67.33l.24-3.41 6.203-5.604c.27-.24-.05-.38-.41-.14L8.7 13.11l-3.313-1.034c-.72-.224-.735-.72.15-1.07l12.924-4.981c.6-.224 1.125.135.945.945l-2.256 9.591z" />
+                    </svg>
+                    <span>Telegram</span>
                 </a>
+
+
+                <!-- <a href="https://t.me/X_coil_App" class="btn btn-primary btn-sm">
+                    <span data-i18n="header_cta">Download for Android</span>
+                </a> -->
             </div>
         </div>
     </header>
@@ -56,7 +63,7 @@
                     <p class="hero-subhead" data-i18n="hero_subhead">Store motor & bearing records, collaborate with
                         technicians, and access practical tools — all from your phone.</p>
                     <div class="hero-ctas">
-                        <a href="#download" class="btn btn-primary">
+                        <a href="https://t.me/X_coil_App" class="btn btn-primary">
                             <span data-i18n="hero_cta_primary">Download for Android</span>
                         </a>
                         <a href="#features" class="btn btn-secondary">
@@ -116,6 +123,18 @@
                         <p data-i18n="feat_community_desc">Join a network of technicians to ask questions and share
                             tips.</p>
                     </div>
+                    <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <h3 data-i18n="feat_marketplace_title">Marketplace</h3>
+                        <p data-i18n="feat_marketplace_desc">Buy and sell motors and spare parts.</p>
+                    </div>
                     <!--  Feature 4 -->
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -141,6 +160,7 @@
                         <h3 data-i18n="feat_tools_title">Tools & Calculators</h3>
                         <p data-i18n="feat_tools_desc">Access handy calculators and converters for your daily work.</p>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -261,7 +281,7 @@
     </main>
 
     <!-- Download CTA (Sticky/Bottom) -->
-    <section id="download" class="download-cta section-padding">
+    <!-- <section id="download" class="download-cta section-padding">
         <div class="container">
             <div class="download-box">
                 <h2 data-i18n="download_title">Get X-Coil Today</h2>
@@ -274,6 +294,29 @@
                     </div>
                 </a>
 
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+    <section id="download" class="download-cta section-padding">
+        <div class="container">
+            <div class="download-box">
+                <h2 data-i18n="download_title">Get X-Coil Today</h2>
+                <a href="https://t.me/X_coil_App" class="btn btn-telegram btn-lg download-btn" target="_blank">
+                    <span class="icon-telegram">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M11.944 0C5.346 0 0 5.346 0 11.944c0 6.598 5.346 11.944 11.944 11.944 6.598 0 11.944-5.346 11.944-11.944C23.888 5.346 18.542 0 11.944 0zm5.206 16.561c-.19.66-.705.818-1.25.555l-3.328-1.554-1.607 1.548c-.18.18-.33.33-.67.33l.24-3.41 6.203-5.604c.27-.24-.05-.38-.41-.14L8.7 13.11l-3.313-1.034c-.72-.224-.735-.72.15-1.07l12.924-4.981c.6-.224 1.125.135.945.945l-2.256 9.591z" />
+                        </svg>
+                    </span>
+                    <div class="btn-text-group">
+                        <span class="btn-label" data-i18n="download_btn">Download via Telegram</span>
+                        <span class="btn-sub">v1.0.1 • 60 MB</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
