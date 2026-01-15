@@ -249,6 +249,7 @@ section {
 }
 
 .feature-card {
+    align-content: start;
     background: var(--bg-body);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
@@ -265,11 +266,11 @@ section {
 .feature-icon {
     width: 60px;
     height: 60px;
-    margin: 0 auto var(--spacing-sm);
+    margin: 0 0 var(--spacing-sm);
     color: var(--primary);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .feature-icon svg {
@@ -277,6 +278,8 @@ section {
     height: 100%;
     stroke: var(--primary);
     transition: transform var(--transition-fast);
+
+
 }
 
 .feature-card:hover .feature-icon svg {
@@ -591,6 +594,10 @@ section {
 
 .feature-card:nth-child(5).animated {
     transition-delay: 0.5s;
+}
+
+.feature-card:nth-child(6).animated {
+    transition-delay: 0.6s;
 }
 
 /* Steps Animation */
